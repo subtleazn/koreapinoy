@@ -4,7 +4,42 @@
   <head>
     <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
 
+    <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+      <meta expr:content='data:blog.metaDescription' name='description'/>
+    <b:else/>
+      <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' name='description'/>
+    </b:if>
+
+
 <meta content='d1e592f62c30efff' name='yandex-verification'/>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({&#39;gtm.start&#39;:
+new Date().getTime(),event:&#39;gtm.js&#39;});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.async=true;j.src=
+&#39;https://www.googletagmanager.com/gtm.js?id=&#39;+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,&#39;script&#39;,&#39;dataLayer&#39;,&#39;GTM-M36NXC8&#39;);</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "Korea Pinoy International Film Festival",
+  "url": "https://korea.pinoyseoul.com/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "PinoySeoul Media Enterprise",
+  "url": "https://korea.pinoyseoul.com/",
+  "logo": "https://korea.pinoyseoul.com/img/logo.png"
+}
+</script>
 
 
 <!-- Google Tag Manager -->
@@ -28,19 +63,64 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
         <b:else/>
         <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
           <data:blog.pageName/>
-          | 
-          <data:blog.title/>
+          | Korea Pinoy International Film Festival
           <b:else/>
-          404 | 
-          <data:blog.title/>
+          404 | Korea Pinoy International Film Festival
         </b:if>
       </b:if>
     </title>
-    <b:if cond='data:blog.metaDescription != &quot;&quot;'>
-      <meta expr:content='data:blog.metaDescription' property='og:description'/>
-    </b:if>
-    <b:if cond='data:blog.postImageUrl != &quot;&quot;'>
-      <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' property='og:title'/>
+      <meta content='article' property='og:type'/>
+      <meta expr:content='data:blog.url' property='og:url'/>
+      <b:if cond='data:blog.postImageUrl != &quot;&quot;'>
+        <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+      <b:else/>
+        <meta content='https://korea.pinoyseoul.com/img/default-share-image.jpg' property='og:image'/>
+      </b:if>
+      <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+        <meta expr:content='data:blog.metaDescription' property='og:description'/>
+      <b:else/>
+        <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' property='og:description'/>
+      </b:if>
+      <meta content='summary_large_image' name='twitter:card'/>
+      <meta content='@PinoySeoul' name='twitter:site'/>
+      <b:if cond='data:post.author.twitterProfileUrl != &quot;&quot;'>
+        <meta expr:content='data:post.author.twitterProfileUrl' name='twitter:creator'/>
+      <b:else/>
+        <meta content='@PinoySeoul' name='twitter:creator'/>
+      </b:if>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' name='twitter:title'/>
+      <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+        <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+      <b:else/>
+        <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' name='twitter:description'/>
+      </b:if>
+      <b:if cond='data:blog.postImageUrl != &quot;&quot;'>
+        <meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
+      <b:else/>
+        <meta content='https://korea.pinoyseoul.com/img/default-share-image.jpg' name='twitter:image'/>
+      </b:if>
+    <b:else/>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' property='og:title'/>
+      <meta content='website' property='og:type'/>
+      <meta expr:content='data:blog.url' property='og:url'/>
+      <meta content='https://korea.pinoyseoul.com/img/default-share-image.jpg' property='og:image'/>
+      <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+        <meta expr:content='data:blog.metaDescription' property='og:description'/>
+      <b:else/>
+        <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' property='og:description'/>
+      </b:if>
+      <meta content='summary_large_image' name='twitter:card'/>
+      <meta content='@PinoySeoul' name='twitter:site'/>
+      <meta content='@PinoySeoul' name='twitter:creator'/>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' name='twitter:title'/>
+      <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+        <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+      <b:else/>
+        <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' name='twitter:description'/>
+      </b:if>
+      <meta content='https://korea.pinoyseoul.com/img/default-share-image.jpg' name='twitter:image'/>
     </b:if>
     <link href='https://fonts.googleapis.com/css?family=Basic' rel='stylesheet'/>
 	<b:skin><![CDATA[

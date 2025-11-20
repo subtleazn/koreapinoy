@@ -1,0 +1,162 @@
+# Korea Pinoy International Film Festival Blogger Theme Documentation
+
+This document provides detailed information about the `koreapinoy` Blogger theme, including its structure, how to customize it, and best practices for managing content.
+
+## Table of Contents
+
+1.  [Theme Overview](#theme-overview)
+2.  [File Structure](#file-structure)
+3.  [Customization](#customization)
+    *   [Updating Default Images and Logos](#updating-default-images-and-logos)
+    *   [Modifying Meta Tags](#modifying-meta-tags)
+    *   [Schema Markup (JSON-LD)](#schema-markup-json-ld)
+    *   [Social Media Sharing Tags](#social-media-sharing-tags)
+    *   [Styling (CSS)](#styling-css)
+    *   [JavaScript](#javascript)
+4.  [Blogger Data Tags Used](#blogger-data-tags-used)
+5.  [SEO Best Practices](#seo-best-practices)
+6.  [Troubleshooting](#troubleshooting)
+7.  [Contributing](#contributing)
+
+## 1. Theme Overview
+
+The `koreapinoy` theme is a custom Blogger theme specifically designed for the Korea Pinoy International Film Festival website (korea.pinoyseoul.com). It has been optimized for better Search Engine Optimization (SEO), structured data implementation, and enhanced social media sharing.
+
+## 2. File Structure
+
+The core of this theme is the `theme.xml` file, which contains all the HTML, CSS, and JavaScript for your Blogger blog.
+
+*   `theme.xml`: The main template file for the Blogger theme. It includes:
+    *   HTML structure (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`)
+    *   CSS styling (within `<b:skin>` tags or linked externally)
+    *   JavaScript code (within `<script>` tags or linked externally)
+    *   Blogger-specific tags (`<b:section>`, `<b:widget>`, `data:`) for dynamic content.
+*   `README.md`: Provides a general overview, installation instructions, and basic customization guidelines.
+*   `LICENSE`: Contains the MIT License information for this project.
+
+## 3. Customization
+
+### Updating Default Images and Logos
+
+As mentioned in the `README.md`, you must update the placeholder URLs for the default share image and publisher logo.
+
+*   **Default Share Image:**
+    *   In `theme.xml`, locate `https://korea.pinoyseoul.com/img/default-share-image.jpg`.
+    *   Replace this URL with the direct link to your desired default share image. This image will be used by social media platforms when a specific post image is not available.
+*   **Publisher Logo:**
+    *   In `theme.xml`, locate `https://korea.pinoyseoul.com/img/logo.png`.
+    *   Replace this URL with the direct link to your organization's logo. This is used in the `Organization` JSON-LD schema for better branding in search results.
+
+### Modifying Meta Tags
+
+The theme includes several meta tags in the `<head>` section for SEO and social sharing.
+
+*   **Meta Description:**
+    ```xml
+    <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+      <meta expr:content='data:blog.metaDescription' name='description'/>
+    <b:else/>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' name='description'/>
+    </b:if>
+    ```
+    This dynamically sets the `description` meta tag. If `data:blog.metaDescription` is set for a post/page (in Blogger's Post Settings -> Search Description), it will be used. Otherwise, it generates a description from the page name and blog title.
+*   **Title Tag:**
+    ```xml
+    <title>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        Korea Pinoy International Film Festival - 한국필리핀국제영화제
+        <b:else/>
+        <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+          <data:blog.pageName/>
+          | Korea Pinoy International Film Festival
+          <b:else/>
+          404 | Korea Pinoy International Film Festival
+        </b:if>
+      </b:if>
+    </title>
+    ```
+    Modify the text `Korea Pinoy International Film Festival - 한국필리핀국제영화제` or `Korea Pinoy International Film Festival` to change the base title of your blog.
+
+### Schema Markup (JSON-LD)
+
+The theme uses JSON-LD for structured data, which helps search engines understand your content better.
+
+*   **WebSite Schema:**
+    ```xml
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Korea Pinoy International Film Festival",
+      "url": "https://korea.pinoyseoul.com/"
+    }
+    </script>
+    ```
+    Update the `name` and `url` fields to match your website's primary name and URL.
+*   **Organization Schema:**
+    ```xml
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "PinoySeoul Media Enterprise",
+      "url": "https://korea.pinoyseoul.com/",
+      "logo": "https://korea.pinoyseoul.com/img/logo.png"
+    }
+    </script>
+    ```
+    Update `name`, `url`, and `logo` to reflect your organization's details.
+
+*   **BlogPosting Schema:** This is automatically generated by Blogger's microdata (`itemscope`, `itemtype`, `itemprop`) attributes within the post structure. Ensure that your posts have a featured image and a meta description set in Blogger's post settings for optimal structured data.
+
+### Social Media Sharing Tags
+
+The theme includes Open Graph (for Facebook, LinkedIn) and Twitter Card tags.
+
+*   **Twitter Handle:**
+    *   Locate `<meta content='@PinoySeoul' name='twitter:site'/>` and `<meta content='@PinoySeoul' name='twitter:creator'/>`.
+    *   Replace `@PinoySeoul` with your actual Twitter handle. For individual posts, the `twitter:creator` tag attempts to use `data:post.author.twitterProfileUrl` if available.
+
+### Styling (CSS)
+
+All custom CSS is embedded within the `<b:skin><![CDATA[...]]></b:skin>` section of `theme.xml`. You can modify existing styles or add new ones here.
+
+### JavaScript
+
+Custom JavaScript is typically found within `<script>` tags in `theme.xml`. Be cautious when modifying JavaScript, as incorrect changes can break theme functionality.
+
+## 4. Blogger Data Tags Used
+
+This theme heavily relies on Blogger's data tags to dynamically generate content. Some key tags include:
+
+*   `data:blog.pageType`: Identifies the type of page (e.g., `index`, `item`, `static_page`, `error_page`).
+*   `data:blog.pageName`: The title of the current page or post.
+*   `data:blog.title`: The title of the blog as configured in Blogger settings.
+*   `data:blog.url`: The URL of the current page.
+*   `data:blog.metaDescription`: The search description set for a post/page.
+*   `data:blog.postImageUrl`: The URL of the featured image for a post.
+*   `data:post.author.twitterProfileUrl`: The Twitter profile URL of the post author (if configured).
+
+Understanding these tags will help you customize the theme effectively.
+
+## 5. SEO Best Practices
+
+*   **Descriptive Titles and Meta Descriptions:** Always provide unique and descriptive titles and search descriptions for each post and page in Blogger's settings.
+*   **Image Optimization:** Use descriptive filenames and alt text for all images.
+*   **Content Quality:** Focus on creating high-quality, relevant content for your audience.
+*   **Regular Updates:** Keep your blog content fresh and updated.
+
+## 6. Troubleshooting
+
+*   **Theme not saving:** Ensure there are no unclosed HTML tags or syntax errors in `theme.xml`. Blogger's template editor can be sensitive.
+*   **Social media shares not showing correct image/description:** After updating the meta tags, use Facebook's [Sharing Debugger](https://developers.facebook.com/tools/debug/) and Twitter's [Card Validator](https://cards-dev.twitter.com/validator) to fetch new information and preview how your content will appear.
+*   **Schema errors:** Use Google's [Rich Results Test](https://search.google.com/test/rich-results) to validate your structured data.
+
+## 7. Contributing
+
+We welcome contributions to improve this theme! If you have suggestions or find issues, please open an issue or submit a pull request on the GitHub repository.
+
+---
+
+**Author:** Nash Ang
+**Under the umbrella of:** PinoySeoul Media Enterprise
