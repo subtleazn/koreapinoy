@@ -22,20 +22,92 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
       var curl = window.location.href;if (curl.indexOf('m=1') != -1) {curl = curl.replace('m=1', 'm=0');window.location.href = curl;}
       //]]></script>
     <b:include data='blog' name='all-head-content'/>
+
     <title>
       <b:if cond='data:blog.pageType == &quot;index&quot;'>
-        Korea Pinoy International Film Festival - 한국필리핀국제영화제
-        <b:else/>
-        <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
-          <data:blog.pageName/>
-          | 
-          <data:blog.title/>
-          <b:else/>
-          404 | 
-          <data:blog.title/>
-        </b:if>
+        <data:blog.title/>
+      <b:else/>
+        <data:blog.pageName/> - <data:blog.title/>
       </b:if>
     </title>
+
+    <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription' name='description'/>
+    <b:else/>
+      <meta expr:content='data:blog.pageTitle + &quot; - &quot; + data:blog.description' name='description'/>
+    </b:if>
+
+    <!-- Open Graph Tags for Facebook/LinkedIn -->
+    <meta expr:content='data:blog.pageName' property='og:title'/>
+    <meta expr:content='data:blog.url' property='og:url'/>
+    <b:if cond='data:blog.postImage'>
+      <meta expr:content='data:blog.postImage' property='og:image'/>
+    <b:else/>
+      <!-- IMPORTANT: Replace with a default image URL for your blog (e.g., your logo) -->
+      <meta content='https://korea.pinoyseoul.com/img/default-share-image.jpg' property='og:image'/>
+    </b:if>
+    <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:blog.pageTitle + &quot; - &quot; + data:blog.description' property='og:description'/>
+    <meta content='website' property='og:type'/>
+    <meta content='Korea PinoySeoul' property='og:site_name'/>
+
+    <!-- Twitter Card Tags -->
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta expr:content='data:blog.pageName' name='twitter:title'/>
+    <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : data:blog.pageTitle + &quot; - &quot; + data:blog.description' name='twitter:description'/>
+    <b:if cond='data:blog.postImage'>
+      <meta expr:content='data:blog.postImage' name='twitter:image'/>
+    <b:else/>
+      <!-- IMPORTANT: Replace with a default image URL for your blog (e.g., your logo) -->
+      <meta content='https://korea.pinoyseoul.com/img/default-share-image.jpg' name='twitter:image'/>
+    </b:if>
+
+    <!-- JSON-LD Structured Data for WebSite -->
+    <script type='application/ld+json'>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Korea PinoySeoul",
+      "url": "https://korea.pinoyseoul.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://korea.pinoyseoul.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data for BlogPosting (conditional for item pages) -->
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+    <script type='application/ld+json'>
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "<data:blog.pageName/>",
+      "description": "<data:blog.metaDescription ? data:blog.metaDescription : data:blog.pageTitle + &quot; - &quot; + data:blog.description/>",
+      "image": "<b:if cond='data:blog.postImage'><data:blog.postImage/><b:else/>https://korea.pinoyseoul.com/img/default-share-image.jpg</b:if>",
+      "url": "<data:blog.url/>",
+      "datePublished": "<data:blog.post.timestampISO8601/>",
+      "dateModified": "<data:blog.post.lastUpdatedISO8601/>",
+      "author": {
+        "@type": "Person",
+        "name": "Nash Ang"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PinoySeoul Media Enterprise",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://korea.pinoyseoul.com/img/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "<data:blog.url/>"
+      }
+    }
+    </script>
+    </b:if>
+
     <b:if cond='data:blog.metaDescription != &quot;&quot;'>
       <meta expr:content='data:blog.metaDescription' property='og:description'/>
     </b:if>
