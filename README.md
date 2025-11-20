@@ -1,6 +1,6 @@
-# Korea PinoySeoul Blogger Theme
+# Korea Pinoy International Film Festival Blogger Theme
 
-This is a custom Blogger theme designed for the Korea PinoySeoul blog, deployed on `korea.pinoyseoul.com`. This theme has been updated to improve Search Engine Optimization (SEO), structured data (Schema.org), and social media sharing capabilities.
+This is a custom Blogger theme designed for the Korea Pinoy International Film Festival website, deployed on `korea.pinoyseoul.com`. This theme has been updated to improve Search Engine Optimization (SEO), structured data (Schema.org), and social media sharing capabilities.
 
 ## Features
 
