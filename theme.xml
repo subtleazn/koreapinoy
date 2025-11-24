@@ -22,22 +22,22 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
 })(window,document,&#39;script&#39;,&#39;dataLayer&#39;,&#39;GTM-M36NXC8&#39;);</script>
 <!-- End Google Tag Manager -->
 
-<script type="application/ld+json">
+<script type='application/ld+json'>
 {
-  "@context": "http://schema.org",
-  "@type": "WebSite",
-  "name": "Korea Pinoy International Film Festival",
-  "url": "https://korea.pinoyseoul.com/"
+  &quot;@context&quot;: &quot;http://schema.org&quot;,
+  &quot;@type&quot;: &quot;WebSite&quot;,
+  &quot;name&quot;: &quot;Korea Pinoy International Film Festival&quot;,
+  &quot;url&quot;: &quot;https://korea.pinoyseoul.com/&quot;
 }
 </script>
 
-<script type="application/ld+json">
+<script type='application/ld+json'>
 {
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "PinoySeoul Media Enterprise",
-  "url": "https://korea.pinoyseoul.com/",
-  "logo": "https://korea.pinoyseoul.com/img/logo.png"
+  &quot;@context&quot;: &quot;http://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;PinoySeoul Media Enterprise&quot;,
+  &quot;url&quot;: &quot;https://korea.pinoyseoul.com/&quot;,
+  &quot;logo&quot;: &quot;https://korea.pinoyseoul.com/img/logo.png&quot;
 }
 </script>
 
@@ -6427,7 +6427,7 @@ $(function() {
             <div class='row'>
               <div class='logo'>
                 <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
-                  <b:widget id='Header1' locked='true' title='Korea Pinoy International Film Festival (Header)' type='Header' version='1'>
+                  <b:widget id='Header1' locked='true' title='Korea Pinoy International Film Festival | 한국필리핀국제영화제  (Header)' type='Header' version='1'>
                     <b:widget-settings>
                       <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEinzynmSwGnMyvCcJhG2l8LfLYs0bA71B4XSJnF1zw09UA49EGx7m5rUAHqlZgmzG4M9xO9kLh3ikLfbCozdtiZGVf9vYq_gLb_NWjXwXCuYIiZyeB9UI7pqnH1G_IsVWesxgS3G1qnsPBcFmudDs7arCkaDMsYcKnq1HZ8QNFAom5UGuCkuyRWLrkbarf6=s1600</b:widget-setting>
                       <b:widget-setting name='displayHeight'>543</b:widget-setting>
@@ -8614,7 +8614,7 @@ $(".menu li ").each(function() {
                     <b:section class='profile-caption' id='profile-caption' maxwidgets='1' showaddelement='no'>
                       <b:widget id='Text1' locked='true' title='Korea Pinoy International Film Festival&lt;br&gt;한국필리핀국제영화제' type='Text' version='1'>
                         <b:widget-settings>
-                          <b:widget-setting name='content'><![CDATA[<b style="font-family: georgia, serif; font-size: 100%; font-style: normal; font-weight: normal;">대한민국의 필리핀 문화와 예술 관문.</b><div><span style="font-family:&quot;;">The Philippine arts and culture gateway of Korea.</span><br /><div style="font-family: georgia, serif; font-size: 100%; font-style: normal; font-weight: normal;"><b><br />주소:</b><br /><a href="http://dmaps.kr/bmtg3">[서울글로벌센터]</a> 서울 종로구 종로38 4층<br /><br /><b>연락처:</b></div></div><div style="font-family: georgia, serif; font-size: 100%; font-style: normal; font-weight: normal;">admin@pinoyseoul.com</div>]]></b:widget-setting>
+                          <b:widget-setting name='content'><![CDATA[<b style="font-family: georgia, serif; font-size: 100%; font-style: normal; font-weight: normal;">대한민국의 필리핀 문화와 예술 관문.</b><div><span style="font-family:&quot;;">The Philippine arts and culture gateway of Korea.</span><br /><div style="font-family: georgia, serif; font-size: 100%; font-style: normal; font-weight: normal;"><b><br />주소:</b><br /><a href="http://dmaps.kr/bmtg3">[서울글로벌센터]</a> 서울 종로구 종로38 4층<br /><br /><b>연락처:</b></div></div><div style="font-family: georgia, serif; font-size: 100%; font-style: normal; font-weight: normal;">events@pinoyseoul.com</div>]]></b:widget-setting>
                         </b:widget-settings>
                         <b:includable id='main'>
                           <!-- only display title if it's non-empty -->
