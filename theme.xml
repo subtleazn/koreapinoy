@@ -26,8 +26,8 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
 {
   &quot;@context&quot;: &quot;http://schema.org&quot;,
   &quot;@type&quot;: &quot;WebSite&quot;,
-  &quot;name&quot;: &quot;<data:blog.title/>&quot;,
-  &quot;url&quot;: &quot;<data:blog.homepageUrl/>&quot;
+  &quot;name&quot;: &quot;Korea Pinoy International Film Festival&quot;,
+  &quot;url&quot;: &quot;https://korea.pinoyseoul.com/&quot;
 }
 </script>
 
@@ -35,9 +35,9 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
 {
   &quot;@context&quot;: &quot;http://schema.org&quot;,
   &quot;@type&quot;: &quot;Organization&quot;,
-  &quot;name&quot;: &quot;<data:blog.title/>&quot;,
-  &quot;url&quot;: &quot;<data:blog.homepageUrl/>&quot;,
-  &quot;logo&quot;: &quot;<b:eval expr='data:blog.postImageUrl ? data:blog.postImageUrl : data:blog.homepageUrl + &quot;img/logo.png&quot;'/>&quot;
+  &quot;name&quot;: &quot;PinoySeoul Media Enterprise&quot;,
+  &quot;url&quot;: &quot;https://korea.pinoyseoul.com/&quot;,
+  &quot;logo&quot;: &quot;https://korea.pinoyseoul.com/img/logo.png&quot;
 }
 </script>
 
@@ -57,8 +57,20 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
       var curl = window.location.href;if (curl.indexOf('m=1') != -1) {curl = curl.replace('m=1', 'm=0');window.location.href = curl;}
       //]]></script>
     <b:include data='blog' name='all-head-content'/>
-    <title><b:include data='blog' name='pageTitle'/></title>
-      <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' property='og:title'/>
+    <title>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        Korea Pinoy International Film Festival - 한국필리핀국제영화제
+        <b:else/>
+        <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+          <data:blog.pageName/>
+          | Korea Pinoy International Film Festival
+          <b:else/>
+          404 | Korea Pinoy International Film Festival
+        </b:if>
+      </b:if>
+    </title>
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' property='og:title'/>
       <meta content='article' property='og:type'/>
       <meta expr:content='data:blog.url' property='og:url'/>
       <b:if cond='data:blog.postImageUrl != &quot;&quot;'>
@@ -78,7 +90,7 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
       <b:else/>
         <meta content='@PinoySeoul' name='twitter:creator'/>
       </b:if>
-      <meta expr:content='data:blog.pageType == &quot;index&quot; ? data:blog.title : data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' name='twitter:title'/>
       <b:if cond='data:blog.metaDescription != &quot;&quot;'>
         <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
       <b:else/>
@@ -90,10 +102,9 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
         <meta content='https://korea.pinoyseoul.com/img/default-share-image.jpg' name='twitter:image'/>
       </b:if>
     <b:else/>
-      <meta expr:content='data:blog.pageType == &quot;index&quot; ? data:blog.title : data:blog.pageName + &quot; | &quot; + data:blog.title' property='og:title'/>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' property='og:title'/>
       <meta content='website' property='og:type'/>
       <meta expr:content='data:blog.url' property='og:url'/>
-      <meta expr:content='data:blog.title' property='og:site_name'/>
       <meta content='https://korea.pinoyseoul.com/img/default-share-image.jpg' property='og:image'/>
       <b:if cond='data:blog.metaDescription != &quot;&quot;'>
         <meta expr:content='data:blog.metaDescription' property='og:description'/>
@@ -102,7 +113,8 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
       </b:if>
       <meta content='summary_large_image' name='twitter:card'/>
       <meta content='@PinoySeoul' name='twitter:site'/>
-      <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' name='twitter:title'/>
+      <meta content='@PinoySeoul' name='twitter:creator'/>
+      <meta expr:content='data:blog.pageName + &quot; | Korea Pinoy International Film Festival&quot;' name='twitter:title'/>
       <b:if cond='data:blog.metaDescription != &quot;&quot;'>
         <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
       <b:else/>
