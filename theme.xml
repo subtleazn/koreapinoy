@@ -57,7 +57,11 @@ j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.
       var curl = window.location.href;if (curl.indexOf('m=1') != -1) {curl = curl.replace('m=1', 'm=0');window.location.href = curl;}
       //]]></script>
     <b:include data='blog' name='all-head-content'/>
-    <title><b:include data='blog' name='pageTitle'/></title>
+    <b:if cond='data:view.isHomepage'>
+      <title><data:blog.title.escaped/></title>
+    <b:else/>
+      <title><data:view.title.escaped/> - <data:blog.title.escaped/></title>
+    </b:if>
       <meta expr:content='data:blog.pageName + &quot; | &quot; + data:blog.title' property='og:title'/>
       <meta content='article' property='og:type'/>
       <meta expr:content='data:blog.url' property='og:url'/>
